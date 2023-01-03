@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing clocks</title>
+    <link rel="stylesheet" href="clock.css">
+    <link rel="stylesheet" href="../nav.css">
+    <script src="clock.js" defer></script>
+    
+</head>
+<body>
+    <div id="sideNavigation" class="sidenav">
+        <a href="#" class="close-btn">&times;</a>
+        <a href="../index.html">Portofolio</a>
+        <a href="../side-nav/side-nav.html">Side-nav</a>
+        <a href="../preview-projects/preview.html">Preview devices</a>
+      </div>
+       
+      <nav class="topnav">
+        <a href="#" class="ham-icon">
+          <svg width="30" height="30">
+              <path d="M0,5 30,5" stroke="#000" stroke-width="5"/>
+              <path d="M0,14 30,14" stroke="#000" stroke-width="5"/>
+              <path d="M0,23 30,23" stroke="#000" stroke-width="5"/>
+          </svg>
+        </a>
+      </nav>
+       
+      <section id="main">
+        <h2>Analog clock</h2>
+        <div class="clock-container">
+            <div class="clock">
+                <div class="hour">
+                    <div class="hr" id="hr"></div>
+                </div>
+                <div class="min">
+                    <div class="mn" id="mn"></div>
+                </div>
+                <div class="sec">
+                    <div class="sc" id="sc"></div>
+                </div>
+            </div>
+        </div>
+
+        <h2>Digital clock</h2>
+        <div class="clock-container">
+            <div id="MyClockDisplay" class="digital-clock" onload="showTime()"></div>
+        </div>
+
+      </section>
+
+</body>
+</html>

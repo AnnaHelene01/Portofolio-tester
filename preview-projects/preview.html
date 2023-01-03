@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="side-nav.css">
-    <script src="side-nav.js" defer></script>
+    <title>Testing previews in devices</title>
+    <link rel="stylesheet" href="preview.css">
+    <link rel="stylesheet" href="../nav.css">
+    <script src="preview.js" defer></script>
     
 </head>
 <body>
     <div id="sideNavigation" class="sidenav">
         <a href="#" class="close-btn">&times;</a>
         <a href="../index.html">Portofolio</a>
+        <a href="../side-nav/side-nav.html">Side-nav</a>
         <a href="../java-clock/clock.html">Clock</a>
-        <a href="#">Contact Us</a>
       </div>
        
       <nav class="topnav">
@@ -28,8 +29,19 @@
       </nav>
        
       <section id="main">
-        <h1>This Side Navigation Menu Looks Good!</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <h1>Preview projects</h1>
+        <div class="clock-container">
+            <div id="inner_wrap">  
+               <div id="wrapper" style="perspective: 1300px;">
+                   <div class="phone view_2" id="phone_1" style="width: 360px; height: 640px;">
+                      <iframe src="https://world-wide-shop.netlify.app/" id="frame_1"></iframe>
+                   </div>
+               </div>
+            </div>
+        </div>
+
+        <h2> Desktop </h2>
       </section>
+
 </body>
 </html>
