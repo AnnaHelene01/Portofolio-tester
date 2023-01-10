@@ -203,88 +203,86 @@ main {
   opacity: 1;
 }
 
-/* Style the Image Used to Trigger the Modal */
-#myImg {
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
+/*Basic Phone styling*/
+.phone {
+  border: 40px solid #121212;
+  border-width: 55px 7px;
+  border-radius: 40px;
+  margin: 50px auto;
+  overflow: hidden;
 }
 
-#myImg:hover {
-  opacity: 0.7;
+.phone iframe {
+  border: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
 }
 
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+@media (max-width: 900px) {
+  #wrapper {
+    -webkit-transform: scale(0.8, 0.8);
+    transform: scale(0.8, 0.8);
+  }
 }
-
-/* Modal Content (Image) */
-.modal-content {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
+@media (max-width: 700px) {
+  #wrapper {
+    -webkit-transform: scale(0.6, 0.6);
+    transform: scale(0.6, 0.6);
+  }
+  .phone {
+    margin: 0 0 0 -70px;
+  }
 }
-
-/* Caption of Modal Image (Image Text) - Same Width as the Image */
-#caption {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-  text-align: center;
-  color: #ccc;
-  padding: 10px 0;
-  height: 150px;
+@media (max-width: 500px) {
+  #wrapper {
+    -webkit-transform: scale(0.4, 0.4);
+    transform: scale(0.4, 0.4);
+  }
 }
-
-/* Add Animation - Zoom in the Modal */
-.modal-content, #caption {
-  animation-name: zoom;
-  animation-duration: 0.6s;
-}
-
-@keyframes zoom {
+/* Fade In Animation */
+@keyframes fadein {
   from {
-    transform: scale(0);
+    opacity: 0;
   }
   to {
-    transform: scale(1);
+    opacity: 1;
   }
 }
-/* The Close Button */
-.close {
-  position: absolute;
-  top: 15px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-
-.close:hover,
-.close:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-
-/* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px) {
-  .modal-content {
-    width: 100%;
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 /*!
@@ -318,7 +316,7 @@ main {
   --bs-gray-800: #343a40;
   --bs-gray-900: #212529;
   --bs-primary: #0d6efd;
-  --bs-secondary: #6c757d;
+  --bs-secondary: #eea47f;
   --bs-success: #198754;
   --bs-info: #0dcaf0;
   --bs-warning: #ffc107;
@@ -326,7 +324,7 @@ main {
   --bs-light: #f8f9fa;
   --bs-dark: #212529;
   --bs-primary-rgb: 13, 110, 253;
-  --bs-secondary-rgb: 108, 117, 125;
+  --bs-secondary-rgb: 238, 164, 127;
   --bs-success-rgb: 25, 135, 84;
   --bs-info-rgb: 13, 202, 240;
   --bs-warning-rgb: 255, 193, 7;
@@ -2110,13 +2108,13 @@ progress {
 
 .table-secondary {
   --bs-table-color: #000;
-  --bs-table-bg: #e2e3e5;
-  --bs-table-border-color: #cbccce;
-  --bs-table-striped-bg: #d7d8da;
+  --bs-table-bg: #fcede5;
+  --bs-table-border-color: #e3d5ce;
+  --bs-table-striped-bg: #efe1da;
   --bs-table-striped-color: #000;
-  --bs-table-active-bg: #cbccce;
+  --bs-table-active-bg: #e3d5ce;
   --bs-table-active-color: #000;
-  --bs-table-hover-bg: #d1d2d4;
+  --bs-table-hover-bg: #e9dbd4;
   --bs-table-hover-color: #000;
   color: var(--bs-table-color);
   border-color: var(--bs-table-border-color);
@@ -3107,20 +3105,20 @@ textarea.form-control-lg {
 }
 
 .btn-secondary {
-  --bs-btn-color: #fff;
-  --bs-btn-bg: #6c757d;
-  --bs-btn-border-color: #6c757d;
-  --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #5c636a;
-  --bs-btn-hover-border-color: #565e64;
-  --bs-btn-focus-shadow-rgb: 130, 138, 145;
-  --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #565e64;
-  --bs-btn-active-border-color: #51585e;
+  --bs-btn-color: #000;
+  --bs-btn-bg: #eea47f;
+  --bs-btn-border-color: #eea47f;
+  --bs-btn-hover-color: #000;
+  --bs-btn-hover-bg: #f1b292;
+  --bs-btn-hover-border-color: #f0ad8c;
+  --bs-btn-focus-shadow-rgb: 202, 139, 108;
+  --bs-btn-active-color: #000;
+  --bs-btn-active-bg: #f1b699;
+  --bs-btn-active-border-color: #f0ad8c;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #6c757d;
-  --bs-btn-disabled-border-color: #6c757d;
+  --bs-btn-disabled-color: #000;
+  --bs-btn-disabled-bg: #eea47f;
+  --bs-btn-disabled-border-color: #eea47f;
 }
 
 .btn-success {
@@ -3243,19 +3241,19 @@ textarea.form-control-lg {
 }
 
 .btn-outline-secondary {
-  --bs-btn-color: #6c757d;
-  --bs-btn-border-color: #6c757d;
-  --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #6c757d;
-  --bs-btn-hover-border-color: #6c757d;
-  --bs-btn-focus-shadow-rgb: 108, 117, 125;
-  --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #6c757d;
-  --bs-btn-active-border-color: #6c757d;
+  --bs-btn-color: #eea47f;
+  --bs-btn-border-color: #eea47f;
+  --bs-btn-hover-color: #000;
+  --bs-btn-hover-bg: #eea47f;
+  --bs-btn-hover-border-color: #eea47f;
+  --bs-btn-focus-shadow-rgb: 238, 164, 127;
+  --bs-btn-active-color: #000;
+  --bs-btn-active-bg: #eea47f;
+  --bs-btn-active-border-color: #eea47f;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #6c757d;
+  --bs-btn-disabled-color: #eea47f;
   --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #6c757d;
+  --bs-btn-disabled-border-color: #eea47f;
   --bs-gradient: none;
 }
 
@@ -4911,12 +4909,12 @@ textarea.form-control-lg {
 }
 
 .alert-secondary {
-  --bs-alert-color: #41464b;
-  --bs-alert-bg: #e2e3e5;
-  --bs-alert-border-color: #d3d6d8;
+  --bs-alert-color: #8f624c;
+  --bs-alert-bg: #fcede5;
+  --bs-alert-border-color: #fae4d9;
 }
 .alert-secondary .alert-link {
-  color: #34383c;
+  color: #724e3d;
 }
 
 .alert-success {
@@ -5280,17 +5278,17 @@ textarea.form-control-lg {
 }
 
 .list-group-item-secondary {
-  color: #41464b;
-  background-color: #e2e3e5;
+  color: #8f624c;
+  background-color: #fcede5;
 }
 .list-group-item-secondary.list-group-item-action:hover, .list-group-item-secondary.list-group-item-action:focus {
-  color: #41464b;
-  background-color: #cbccce;
+  color: #8f624c;
+  background-color: #e3d5ce;
 }
 .list-group-item-secondary.list-group-item-action.active {
   color: #fff;
-  background-color: #41464b;
-  border-color: #41464b;
+  background-color: #8f624c;
+  border-color: #8f624c;
 }
 
 .list-group-item-success {
@@ -6899,8 +6897,8 @@ textarea.form-control-lg {
 }
 
 .text-bg-secondary {
-  color: #fff !important;
-  background-color: RGBA(108, 117, 125, var(--bs-bg-opacity, 1)) !important;
+  color: #000 !important;
+  background-color: RGBA(238, 164, 127, var(--bs-bg-opacity, 1)) !important;
 }
 
 .text-bg-success {
@@ -6941,10 +6939,10 @@ textarea.form-control-lg {
 }
 
 .link-secondary {
-  color: #6c757d !important;
+  color: #eea47f !important;
 }
 .link-secondary:hover, .link-secondary:focus {
-  color: #565e64 !important;
+  color: #f1b699 !important;
 }
 
 .link-success {
